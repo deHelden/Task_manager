@@ -1,0 +1,8 @@
+- @projects.each do |project|
+  .index_row.clearfix
+    h2.project_title
+      = link_to project.title, project
+    p.project_sub_title
+      = project.description
+.links
+  = link_to "New Project", new_project_path

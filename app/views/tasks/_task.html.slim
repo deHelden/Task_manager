@@ -1,0 +1,22 @@
+.row.clearfix
+  - if task.completed?
+    .complete
+      = link_to complete_project_task_path(@project, task.id), method: :patch do
+        i.fa.fa-check[style="opacity: 0.4;"]
+    .task
+      p[style="opacity: 0.4;"]
+        strike
+          = task.content
+    .trash
+      = link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do
+        i.fa.fa-trash
+  - else
+    .complete
+      = link_to complete_project_task_path(@project, task.id), method: :patch do
+        i.fa.fa-circle-thin
+    .task
+      p
+        = task.content
+    .trash
+      = link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do
+        i.fa.fa-trash

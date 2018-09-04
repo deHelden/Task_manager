@@ -1,0 +1,16 @@
+p#notice
+  = notice
+h2.project_title
+  = @project.title
+p.project_sub_title
+  = @project.description
+#tasks_wrapper
+  = render @project.tasks
+  #form
+    = render "tasks/form"
+.links
+  = link_to 'Edit', edit_project_path(@project)
+  |  |
+  = link_to 'Delete', project_path(@project), method: :delete, data: { confirm: "Are you sure?" }
+  |  |
+  = link_to 'Back', projects_path
