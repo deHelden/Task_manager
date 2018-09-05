@@ -35,6 +35,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params[:task].permit(:content)
+    params[:task].permit(:content, :deadline)
   end
 end

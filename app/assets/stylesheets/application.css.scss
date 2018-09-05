@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
  $white_opaque: rgba(250, 250, 250, .3);
  $dark: #1F7972;
 
@@ -108,7 +107,7 @@ body {
 			padding: 1em 0;
 		}
 		.task {
-			width: 80%;
+			width: 65%;
 			float: left;
 			p {
 				margin: 0;
@@ -117,6 +116,13 @@ body {
 				font-weight: 100;
 			}
 		}
+    .deadline {
+      width: 15%;
+      float: left;
+      text-align: center;
+      border-left: 1px solid rgba(250,250,250, .3);
+      padding: 1em 0;
+    }
 		.trash {
 			width: 10%;
 			float: left;
@@ -136,7 +142,7 @@ body {
 		margin-top: 2em;
 		padding: 0 5%;
 		input[type="text"] {
-			width: 72%;
+			width: 64%;
 			margin-right: 2%;
 			display: inline-block;
 			outline: none;
@@ -146,6 +152,17 @@ body {
 			border-radius: 4px;
 			padding: 1em 2em;
 		}
+    .task_deadline{
+      background: rgba(250,250,250,.4);
+      outline: none;
+      border: none;
+      height: 80px;
+      border-radius: 4px;
+      width: 32%;
+      display: inline-block;
+      transition: all .4s ease-in-out;
+      padding: 1em 1em;
+    }
 		input[type="submit"] {
 			background: rgba(250,250,250,.4);
 			outline: none;

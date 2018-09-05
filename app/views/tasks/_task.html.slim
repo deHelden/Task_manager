@@ -7,6 +7,9 @@
       p[style="opacity: 0.4;"]
         strike
           = task.content
+    .deadline
+      i
+        = task.deadline
     .trash
       = link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do
         i.fa.fa-trash
@@ -17,6 +20,9 @@
     .task
       p
         = task.content
+    .deadline
+      i
+        = task.deadline
     .trash
       = link_to project_task_path(@project, task.id), method: :delete, data: { confirm: "Are you sure?" } do
         i.fa.fa-trash
