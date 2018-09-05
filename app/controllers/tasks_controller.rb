@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
   before_action :set_project
   before_action :set_task, except: [:create]
@@ -18,8 +20,8 @@ class TasksController < ApplicationController
   end
 
   def complete
-   @task.update_attribute(:completed_at, Time.now)
-   redirect_to @project, notice: "Task completed"
+    @task.update_attribute(:completed_at, Time.now)
+    redirect_to @project, notice: 'Task completed'
   end
 
   private
