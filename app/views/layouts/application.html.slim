@@ -11,4 +11,11 @@ html
     link[href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"]
   body
     .container
-      = yield
+      - if user_signed_in?
+        = link_to 'Sign_out', destroy_user_session_path,
+        :style=>'float: right; margin-right: 3em;',
+        method: :delete, data: { confirm: "Are you sure?" }
+        i style="float:right; margin-right: 1em;"
+          = current_user.email
+      .user-data style="margin-top:1.5em;"
+        = yield
